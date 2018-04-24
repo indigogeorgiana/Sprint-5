@@ -331,3 +331,60 @@ at a given position, you could test whether the sum of the two counters is even 
 
 Terminating a line by adding a newline character must happen after the line has been built up, 
 so do this after the inner loop but inside of the outer loop.
+
+MINIMUM
+/ Your code here.
+//Write a function min that takes two arguments and returns their minimum.
+function min(a, b){
+    return (a < b)? a : b;
+}
+
+////function Math.min that returns its smallest argument.
+console.log(Math.min(0, 10));
+// → 0
+console.log(Math.min(0, -10));
+// → -10
+
+RECURSION
+//Define a recursive function isEven corresponding to this description.
+//Function accepts single parameter (a positive, whole number) return a Boolean.
+function isEven(num){
+    //Use if/else if/else chain that tests which of the three cases applies.  
+     if(num === 0) { 
+       return true;
+     }
+     else if(num === 1){
+       return false;
+     }
+     return isEven(num-2);
+   }
+   console.log(isEven(50));
+   // → true
+   console.log(isEven(75));
+   // → false
+   console.log(isEven(-1));
+   // → ??
+
+BEAN COUNTING 
+// Your code here.
+//Write a function called countBs
+function countBs(str){
+    return countChar(str, 'B');
+  }
+  
+  //Write a function called countChar that behaves like countBs 
+  function countChar(str, letter){
+    var num = 0;
+  //Your function will need a loop that looks at every character in the string. 
+    for(var i = 0; i < str.length; i += 1){
+      if(str[i] === letter){
+        num += 1;
+      }
+    }
+  //Once the loop has finished, the counter can be returned.  
+    return num;
+  }
+  console.log(countBs("BBC"));
+  // → 2
+  console.log(countChar("kakkerlak", "k"));
+  // → 4
